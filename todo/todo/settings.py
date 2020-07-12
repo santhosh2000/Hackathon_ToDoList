@@ -15,6 +15,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
@@ -118,17 +119,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-    ("js", os.path.join(STATIC_ROOT, 'js')),
-    ("css", os.path.join(STATIC_ROOT, 'css')),
-    ("bootstrap", os.path.join(STATIC_ROOT, 'bootstrap'))
-)
-
-
-
-try:
-    from local_settings import *
-except ImportError as exp:
-    pass
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    'C:\temp\Hackathon_ToDoList\todo\static',
+]
